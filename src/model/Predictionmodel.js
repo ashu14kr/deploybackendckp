@@ -8,7 +8,14 @@ const PredictionSchema = new mongoose.Schema({
     analysis:{},
     keyplayers:{},
     peoplepicks:{},
-    probable11:{},
+    probable11:[
+        {
+            team1:{}
+        },
+        {
+            team2:{}
+        }
+    ],
     grandleagueimg:{},
     headtoheadteamimg:{},
     thumbnailimg:{},
