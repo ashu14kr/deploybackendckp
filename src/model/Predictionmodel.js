@@ -10,11 +10,9 @@ const PredictionSchema = new mongoose.Schema({
     peoplepicks:{},
     probable11:[
         {
-            team1:{}
-        },
-        {
+            team1:{},
             team2:{}
-        }
+        },
     ],
     grandleagueimg:{},
     headtoheadteamimg:{},
