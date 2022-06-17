@@ -31,6 +31,14 @@ app.post("/addverifiedUsers", (req, res)=>{
         res.send(e);
       });
 });
+app.get("/getallusers", async (req, res) => {
+    try {
+        const data = await usermodel.find({});
+        res.send(data);
+    } catch (error) {
+        res.send(error);
+    }
+});
 app.get("/getusers/:id", async (req, res) => {
     const id = req.params.id;
     try {
