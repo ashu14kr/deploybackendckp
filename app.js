@@ -12,14 +12,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// app.use(function(req,res,next){
-//     res.header("Access-Control-Allow-Origin","*");
-//     res.header("Access-Control-Methods",'GET','PUT','POST','DELETE');
-//     res.header("Access-Control-Allow-Headers",'Content-Type');
-//     next();
-
-// })
-
 // users APIS
 
 app.post("/addverifiedUsers", (req, res)=>{
@@ -106,7 +98,14 @@ app.patch("/blogs/update/:id", async (req, res) => {
     } catch (error) {
         res.status(404).send(error);
     }
-})
+});
+app.delete("/deleteBlog/:id", async (req, res)=>{
+    const _id = req.params.id;
+    const data = await usermodel.deleteOne({
+        _id: _id
+    });
+    res.send("deleted");
+});
 
 
 // offers APIs
@@ -140,7 +139,14 @@ app.patch("/offer/update/:id", async (req, res) => {
     } catch (error) {
         res.status(404).send(error);
     }
-})
+});
+app.delete("/deleteOffer/:id", async (req, res)=>{
+    const _id = req.params.id;
+    const data = await usermodel.deleteOne({
+        _id: _id
+    });
+    res.send("deleted");
+});
 
 
 // prediction APIS
@@ -174,7 +180,14 @@ app.patch("/prediction/update/:id", async (req, res) => {
     } catch (error) {
         res.status(404).send(error);
     }
-})
+});
+app.delete("/deletePrediction/:id", async (req, res)=>{
+    const _id = req.params.id;
+    const data = await usermodel.deleteOne({
+        _id: _id
+    });
+    res.send("deleted");
+});
 
 
 
@@ -209,7 +222,14 @@ app.patch("/videos/update/:id", async (req, res) => {
     } catch (error) {
         res.status(404).send(error);
     }
-})
+});
+app.delete("/deleteVideos/:id", async (req, res)=>{
+    const _id = req.params.id;
+    const data = await usermodel.deleteOne({
+        _id: _id
+    });
+    res.send("deleted");
+});
 
 
 app.get("/", (req, res)=>{
