@@ -102,7 +102,7 @@ app.patch("/blogs/update/:id", async (req, res) => {
 app.delete("/deleteBlog/:id", async (req, res) => {
   try {
     const _id = req.params.id;
-    const data = await usermodel.deleteOne({
+    const data = await blogsmodel.deleteOne({
       _id: _id,
     });
     res.send("deleted");
@@ -147,7 +147,7 @@ app.patch("/offer/update/:id", async (req, res) => {
 });
 app.delete("/deleteOffer/:id", async (req, res) => {
   const _id = req.params.id;
-  const data = await usermodel.deleteOne({
+  const data = await Offersmodel.deleteOne({
     _id: _id,
   });
   res.send("deleted");
@@ -189,7 +189,7 @@ app.patch("/prediction/update/:id", async (req, res) => {
 });
 app.delete("/deletePrediction/:id", async (req, res) => {
   const _id = req.params.id;
-  const data = await usermodel.deleteOne({
+  const data = await predictionmodel.deleteOne({
     _id: _id,
   });
   res.send("deleted");
@@ -231,7 +231,7 @@ app.patch("/videos/update/:id", async (req, res) => {
 });
 app.delete("/deleteVideos/:id", async (req, res) => {
   const _id = req.params.id;
-  const data = await usermodel.deleteOne({
+  const data = await videomodels.deleteOne({
     _id: _id,
   });
   res.send("deleted");
