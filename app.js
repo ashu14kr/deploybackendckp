@@ -61,7 +61,14 @@ app.patch("/users/update/:id", async (req, res) => {
     } catch (error) {
         res.status(404).send(error);
     }
-})
+});
+app.delete("/deleteUser/:id", async (req, res)=>{
+    const _id = req.params.id;
+    const data = await usermodel.deleteOne({
+        _id: _id
+    });
+    res.send("deleted");
+});
 
 
 
