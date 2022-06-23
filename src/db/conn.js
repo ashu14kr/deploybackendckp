@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://cricketapp:cricketapp123@cluster0.ifxhlvo.mongodb.net/?retryWrites=true&w=majority").then(() => {
+mongoose.connect("mongodb://localhost:27017/cricketapp").then(() => {
     console.log("connection successful");
 }).catch((e) => {
     console.log("connection failed");
